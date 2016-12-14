@@ -67,7 +67,7 @@ public class ArrayExercise {
 
     static boolean commonEnd(int[] a1, int[] a2) {
 
-    return (a1[0] == a2[0]) || (a1[a1.length-1] == a2[a2.length-1]);=
+    return (a1[0] == a2[0]) || (a1[a1.length-1] == a2[a2.length-1]);
     }
 
 
