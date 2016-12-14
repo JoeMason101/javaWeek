@@ -1,12 +1,8 @@
 package employeeProgramme.employeeProgramme.main;
-
-import employeeProgramme.employeeProgramme.models.Employee;
 import employeeProgramme.employeeProgramme.models.GeneratedEmployees;
 import employeeProgramme.ui.CommandInterface;
 
-import java.util.List;
 
-import static employeeProgramme.employeeProgramme.models.GeneratedEmployees.employees;
 /**
  * Created by Joe on 13/12/2016.
  */
@@ -22,7 +18,7 @@ public class Programme {
             System.out.println(e);
 
         List<Employee> result2 = TaskProcessing.search("Mason");
-        for(Employee e : result2)
+        for(Employee e 5: result2)
             System.out.println(e);
 
         List<Employee> result3 = TaskProcessing.search("FBI Agent");

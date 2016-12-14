@@ -16,10 +16,27 @@ public class Contact {
     //default Constructor
     public Contact(Person person, Address address, String s) {}
 
-    public Contact(Person person, Address address,String phoneNumber, String twitter, String facebook, String email) {
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Contact(Person person, Address address, String phoneNumber, String twitter, String facebook, String email) {
         this.person = person;
         this.address = address;
         this.phoneNumber = phoneNumber;
+
         this.twitter = twitter;
         this.facebook = facebook;
         this.email = email;

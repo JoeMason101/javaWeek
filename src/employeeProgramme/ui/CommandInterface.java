@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static employeeProgramme.employeeProgramme.models.GeneratedEmployees.employees;
+
 /**
  * Created by Joe on 13/12/2016.
  */
@@ -41,7 +43,7 @@ public class CommandInterface {
                     TaskProcessing.listAllEmployees();
                     break;
                 case 2:
-                    System.out.println(TaskProcessing.createNew(inputDetails()));
+                    System.out.println(TaskProcessing.createNew(inputDetails(null)));
                     break;
                 case 3:
                     System.out.println("Enter Search string: ");
@@ -52,8 +54,33 @@ public class CommandInterface {
                             System.out.println(e);
                     } else {
                         System.out.println("NOT FOUND!");
-                        break;
+
+
                     }
+                    break;
+                case 4:
+                    _edit = true;
+                    input.nextLine();
+                    TaskProcessing.listAllEmployees();
+                    System.out.println("Enter ID to edit");
+                    int index = TaskProcessing.searchByIndex(input.nextInt());
+                    if(index == -1) {
+                        System.out.println("Record does not exist!");
+                    } else {
+                        System.out.println(TaskProcessing.editEmployee(index,inputDetails(employees.get(index))));
+                    }
+                    _edit = false;
+                    break;
+                case 5:
+                    TaskProcessing.listAllEmployees();
+                    System.out.println("Enter an ID to remove");
+                    int indexToRemove = TaskProcessing.searchByIndex(input.nextInt());
+                    System.out.println(TaskProcessing.removeEmployee(indexToRemove));
+                    break;
+                case 6:
+                    TaskProcessing.sortByFirstName();
+                    TaskProcessing.listAllEmployees();
+                    break;
                 case 7:
                     _isRunning = false;
 
@@ -61,31 +88,33 @@ public class CommandInterface {
             }
         }
     }
-    private static List<String> inputDetails() {
+    private static List<String> inputDetails(Employee current) {
         List<String> tempData = new ArrayList<>();
         input.nextLine();
 
-        System.out.print("ID: ");
+        System.out.print("ID: " + (_edit ? current.getId() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("First Name: ");
+        System.out.print("First Name: " + (_edit ? current.getFirstName() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("Last Name: ");
+        System.out.print("Last Name: " + (_edit ? current.getLastName() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("Date of Birth (YYYY-MM-DD) : ");
+        System.out.print("Date of Birth (YYYY-MM-DD) : " + (_edit ? current.getDob() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("Employee ID: ");
+        System.out.print("Employee ID: " + (_edit ? current.getEmployeeId() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("Hire Date (YYYY-MM-DD) : ");
+        System.out.print("Hire Date (YYYY-MM-DD) : " + (_edit ? current.getHireDate() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
-        System.out.print("Position : ");
+        System.out.print("Position : " + (_edit ? current.getPosition() + "\nChange to" : ""));
         tempData.add(input.nextLine());
 
         return tempData;
     }
+
+
 }

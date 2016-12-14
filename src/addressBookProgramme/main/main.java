@@ -4,6 +4,7 @@ import addressBookProgramme.models.GeneratedContacts;
 import addressBookProgramme.models.Contact;
 import addressBookProgramme.models.Person;
 import addressBookProgramme.models.Address;
+import addressBookProgramme.ui.CommandInterfaceC;
 
 import java.util.List;
 
@@ -27,7 +28,11 @@ public class main {
         for(Contact c : result1)
             System.out.println(c);
 
+        CommandInterfaceC.display();
+
     }
+
+
 
 
 
