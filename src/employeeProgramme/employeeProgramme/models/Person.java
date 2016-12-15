@@ -71,6 +71,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return String.format("%s %s %s %s" , this.id, this.firstName, this.lastName, this.getAge());
+        return String.format("[%s] %s %s %s" , this.id, this.firstName, this.lastName, this.getAge());
     }
 }

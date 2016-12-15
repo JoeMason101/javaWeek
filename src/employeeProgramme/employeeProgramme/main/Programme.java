@@ -1,6 +1,7 @@
 package employeeProgramme.employeeProgramme.main;
 import employeeProgramme.employeeProgramme.models.GeneratedEmployees;
 import employeeProgramme.ui.CommandInterface;
+import employeeProgramme.ui.SwingUI;
 
 
 /**
@@ -24,7 +25,8 @@ public class Programme {
         List<Employee> result3 = TaskProcessing.search("FBI Agent");
         for(Employee e : result3)
             System.out.println(e);*/
-        CommandInterface.display();
+        //CommandInterface.display();
+        new SwingUI();
 
     }
 }

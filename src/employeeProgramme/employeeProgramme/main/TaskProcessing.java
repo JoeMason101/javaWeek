@@ -153,7 +153,7 @@ public class TaskProcessing {
             if(!("".equals(data.get(6))))
                 employees.get(id).setPosition(data.get(6));
 
-            return "Sucessfully edit " + employees.get(id);
+            return "Successfully edit " + employees.get(id);
         } catch (Exception e) {
             return " FAILURE TO EDIT: caused by" + e;
         }
@@ -169,7 +169,7 @@ public class TaskProcessing {
             else
             return "NOT EXISTED";
 
-        return  "Successfull removed" + index;
+        return  "Successful removed" + index;
 
 
     }

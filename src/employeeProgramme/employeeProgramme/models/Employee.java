@@ -49,7 +49,7 @@ public class Employee extends Person {
 
     @Override
     public String toString() {
-        return String.format("Employee: %s %s %s %s", super.toString(), this.employeeId, this.hireDate,this.position);
+        return String.format("%s %s %s %s", super.toString(), this.employeeId, this.hireDate,this.position);
     }
 
 
